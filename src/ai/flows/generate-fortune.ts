@@ -20,7 +20,7 @@ const GenerateFortuneInputSchema = z.object({
 export type GenerateFortuneInput = z.infer<typeof GenerateFortuneInputSchema>;
 
 const GenerateFortuneOutputSchema = z.object({
-  fortune: z.string().describe('คำทำนายที่สร้างขึ้น'),
+  fortune: z.string().describe('คำทำนายที่สร้างขึ้นในรูปแบบกลอนภาษาไทย'),
   interpretation: z.string().describe('การตีความคำทำนาย'),
   recommendations: z.string().describe('คำแนะนำส่วนบุคคลตามคำทำนาย ผลการอ่านที่ผ่านมา และคำถามของผู้ใช้'),
 });
@@ -34,25 +34,24 @@ const fortunePrompt = ai.definePrompt({
   name: 'fortunePrompt',
   input: {schema: GenerateFortuneInputSchema},
   output: {schema: GenerateFortuneOutputSchema},
-  prompt: `You are a wise seer, skilled in interpreting fortunes and providing personalized guidance.
+  prompt: `ท่านคือโหรผู้ชาญฉลาด เชี่ยวชาญในการตีความโชคชะตาและให้คำแนะนำเฉพาะบุคคล
+  โปรดดูผลคำทำนายที่ผ่านมาและบริบทปัจจุบันของผู้ใช้ เพื่อสร้างคำทำนายใหม่ ตีความหมาย
+  และให้คำแนะนำที่ปรับให้เหมาะกับแต่ละบุคคล พิจารณาประวัติของผู้ใช้เพื่อนำเสนอข้อมูลเชิงลึกที่ไม่เหมือนใคร
 
-  Based on the user's past readings and current context, generate a new fortune, interpret its meaning,
-  and provide tailored recommendations. Consider the user's history to offer unique insights.
+  สำคัญมาก: สร้าง "fortune" (คำทำนาย) เป็นบทกลอนภาษาไทยที่ไพเราะและมีความหมาย
 
-  Past Readings:
+  ผลคำทำนายที่ผ่านมา:
   {{#if pastReadings}}
   {{#each pastReadings}}
   - {{{this}}}
   {{/each}}
   {{else}}
-  No past readings available.
+  ไม่มีผลคำทำนายที่ผ่านมา
   {{/if}}
 
-  User Query: {{{userQuery}}}
+  คำถามจากผู้ใช้: {{{userQuery}}}
 
-  Fortune:
-  Interpretation:
-  Recommendations:
+  กรุณาสร้างผลลัพธ์ตามโครงสร้าง JSON ที่กำหนดใน output schema.
   `,
 });
 
