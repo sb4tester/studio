@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FortuneDisplayCard } from '@/components/FortuneDisplayCard';
 import { ShareButton } from '@/components/ShareButton';
