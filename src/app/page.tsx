@@ -13,23 +13,23 @@ export default function HomePage() {
           <div className="inline-block p-4 mx-auto mb-4 rounded-full bg-primary/20 text-primary">
             <Landmark size={48} strokeWidth={1.5} />
           </div>
-          <CardTitle className="text-5xl font-bold tracking-wider text-primary">Seer Shaker</CardTitle>
+          <CardTitle className="text-5xl font-bold tracking-wider text-primary font-heading">เขย่าเซียมซี</CardTitle>
           <CardDescription className="text-lg text-muted-foreground mt-2">
-            Unveil your destiny with the ancient art of Kao Chimsi.
+            ค้นพบโชคชะตาของคุณด้วยศาสตร์เก่าแก่แห่งการเสี่ยงเซียมซี
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="p-6 space-y-4 text-center border rounded-lg bg-card border-primary/30">
             <ListChecks className="w-12 h-12 mx-auto mb-2 text-accent" />
-            <h2 className="text-2xl font-semibold font-heading text-accent">How to Play</h2>
+            <h2 className="text-2xl font-semibold font-heading text-accent">วิธีเล่น</h2>
             <p className="text-muted-foreground">
-              Follow these simple steps to receive your fortune:
+              ทำตามขั้นตอนง่ายๆ เหล่านี้เพื่อรับคำทำนายของคุณ:
             </p>
             <ol className="space-y-2 text-left list-decimal list-inside text-foreground">
-              <li>Click the "Seek Your Fortune" button below.</li>
-              <li>Focus your mind on a question or simply be open to guidance.</li>
-              <li>Click "Shake the Seer Sticks" to generate your fortune.</li>
-              <li>Reflect on the wisdom revealed.</li>
+              <li>คลิกปุ่ม "เสี่ยงทาย" ด้านล่าง</li>
+              <li>ตั้งสมาธิกับคำถามในใจ หรือเพียงเปิดใจรับคำแนะนำ</li>
+              <li>คลิก "เขย่าติ้ว" ในหน้าถัดไปเพื่อรับคำทำนายของคุณ</li>
+              <li>พิจารณาภูมิปัญญาที่เปิดเผย</li>
             </ol>
           </div>
 
@@ -37,15 +37,15 @@ export default function HomePage() {
             <Link href="/shake" passHref>
               <Button size="lg" className="text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transform hover:scale-105 transition-transform duration-300 ease-out">
                 <Sparkles className="w-5 h-5 mr-2" />
-                Seek Your Fortune
+                เสี่ยงทาย
               </Button>
             </Link>
           </div>
         </CardContent>
       </Card>
        <footer className="mt-12 text-sm text-center text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} Seer Shaker. All rights reserved.</p>
-        <p>Fortune telling is for entertainment purposes only.</p>
+        <p>&copy; {new Date().getFullYear()} เขย่าเซียมซี สงวนลิขสิทธิ์</p>
+        <p>การทำนายโชคชะตาจัดทำขึ้นเพื่อความบันเทิงเท่านั้น</p>
       </footer>
     </main>
   );

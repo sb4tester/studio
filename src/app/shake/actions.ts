@@ -9,10 +9,9 @@ export async function getFortuneAction(input: GenerateFortuneInput): Promise<Gen
     return result;
   } catch (error) {
     console.error("Error generating fortune:", error);
-    // Provide a more user-friendly error message if possible
     if (error instanceof Error && error.message.includes('deadline')) {
-      throw new Error("The seer is contemplating deeply... please try again in a moment.");
+      throw new Error("เทพพยากรณ์กำลังครุ่นคิดอย่างหนัก... โปรดลองอีกครั้งในอีกสักครู่");
     }
-    throw new Error("Failed to generate fortune. The spirits are unclear at this time.");
+    throw new Error("ไม่สามารถสร้างคำทำนายได้ เทพพยากรณ์ยังไม่ชัดเจนในขณะนี้");
   }
 }

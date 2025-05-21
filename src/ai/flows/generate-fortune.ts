@@ -14,15 +14,15 @@ import {z} from 'genkit';
 const GenerateFortuneInputSchema = z.object({
   pastReadings: z
     .array(z.string())
-    .describe('An array of the user\'s past fortune readings.'),
-  userQuery: z.string().describe('Any specific question or context from the user.'),
+    .describe('รายการผลคำทำนายที่ผ่านมาของผู้ใช้'),
+  userQuery: z.string().describe('คำถามหรือบริบทเฉพาะจากผู้ใช้'),
 });
 export type GenerateFortuneInput = z.infer<typeof GenerateFortuneInputSchema>;
 
 const GenerateFortuneOutputSchema = z.object({
-  fortune: z.string().describe('The generated fortune.'),
-  interpretation: z.string().describe('The interpretation of the fortune.'),
-  recommendations: z.string().describe('Personalized recommendations based on the fortune and past readings.'),
+  fortune: z.string().describe('คำทำนายที่สร้างขึ้น'),
+  interpretation: z.string().describe('การตีความคำทำนาย'),
+  recommendations: z.string().describe('คำแนะนำส่วนบุคคลตามคำทำนาย ผลการอ่านที่ผ่านมา และคำถามของผู้ใช้'),
 });
 export type GenerateFortuneOutput = z.infer<typeof GenerateFortuneOutputSchema>;
 

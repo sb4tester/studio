@@ -25,8 +25,8 @@ const cinzel = Cinzel_Decorative({
 });
 
 export const metadata: Metadata = {
-  title: 'Seer Shaker',
-  description: 'Get your fortune told with the Seer Shaker app.',
+  title: 'เขย่าเซียมซี',
+  description: 'มาดูดวงของคุณด้วยแอปเขย่าเซียมซี',
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="th">
       <body className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased`}>
         {children}
         <Toaster />
